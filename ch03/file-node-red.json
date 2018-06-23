@@ -1,0 +1,123 @@
+[
+    {
+        "id": "39679aa7.fb46b6",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c7c82088.3c00d8",
+        "type": "file",
+        "z": "39679aa7.fb46b6",
+        "name": "",
+        "filename": "counter.txt",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 320,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b87a62fd.72dbe",
+        "type": "inject",
+        "z": "39679aa7.fb46b6",
+        "name": "Inject data",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "c7c82088.3c00d8"
+            ]
+        ]
+    },
+    {
+        "id": "b99e2b84.c3f0b",
+        "type": "file in",
+        "z": "39679aa7.fb46b6",
+        "name": "",
+        "filename": "counter.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 330,
+        "y": 260,
+        "wires": [
+            [
+                "88a1139.af497f"
+            ]
+        ]
+    },
+    {
+        "id": "9550caf3.3ed458",
+        "type": "inject",
+        "z": "39679aa7.fb46b6",
+        "name": "Read data",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 240,
+        "wires": [
+            [
+                "b99e2b84.c3f0b"
+            ]
+        ]
+    },
+    {
+        "id": "88a1139.af497f",
+        "type": "debug",
+        "z": "39679aa7.fb46b6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 560,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "4793289.f1c91d8",
+        "type": "tail",
+        "z": "39679aa7.fb46b6",
+        "name": "",
+        "filetype": "text",
+        "split": false,
+        "filename": "counter.txt",
+        "x": 110,
+        "y": 380,
+        "wires": [
+            [
+                "91089567.05772"
+            ]
+        ]
+    },
+    {
+        "id": "91089567.05772",
+        "type": "debug",
+        "z": "39679aa7.fb46b6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 340,
+        "y": 400,
+        "wires": []
+    }
+]
