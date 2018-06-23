@@ -2,5 +2,4 @@
 # Application Development with Node-RED
 
 ## Downloads
-[File Operation Node example](file-nodes.json)
-
+[File Operation Node example](file-node-red.json)
