@@ -1,0 +1,137 @@
+[
+    {
+        "id": "5af9d97d.3c2678",
+        "type": "tab",
+        "label": "JSON Node Flow",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "bf296083.d1a1c",
+        "type": "inject",
+        "z": "5af9d97d.3c2678",
+        "name": "Inject data",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "ae9dbb97.65c8f8"
+            ]
+        ]
+    },
+    {
+        "id": "5bc3ccb2.735c54",
+        "type": "inject",
+        "z": "5af9d97d.3c2678",
+        "name": "Read data",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 100,
+        "y": 240,
+        "wires": [
+            [
+                "2fff024d.a984a6"
+            ]
+        ]
+    },
+    {
+        "id": "aa4737a2.f44438",
+        "type": "debug",
+        "z": "5af9d97d.3c2678",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 530,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "9c02b579.806478",
+        "type": "debug",
+        "z": "5af9d97d.3c2678",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 530,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "fd8a8b0f.a2b858",
+        "type": "comment",
+        "z": "5af9d97d.3c2678",
+        "name": "Inject timestamp value and store in \"counter.json\"",
+        "info": "",
+        "x": 200,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "a791d759.f2113",
+        "type": "comment",
+        "z": "5af9d97d.3c2678",
+        "name": "Read the contents of the file \"counter.json\"",
+        "info": "",
+        "x": 180,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ae9dbb97.65c8f8",
+        "type": "key-value-write",
+        "z": "5af9d97d.3c2678",
+        "store": "1e031f6c.57c209",
+        "action": "set",
+        "key": "count",
+        "keyvalue": "",
+        "name": "",
+        "x": 310,
+        "y": 120,
+        "wires": [
+            [
+                "9c02b579.806478"
+            ]
+        ]
+    },
+    {
+        "id": "2fff024d.a984a6",
+        "type": "key-value-read",
+        "z": "5af9d97d.3c2678",
+        "store": "1e031f6c.57c209",
+        "key": "count",
+        "name": "",
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "aa4737a2.f44438"
+            ]
+        ]
+    },
+    {
+        "id": "1e031f6c.57c209",
+        "type": "key-value-store",
+        "z": "",
+        "filepath": "counter.json",
+        "namespace": "",
+        "name": ""
+    }
+]

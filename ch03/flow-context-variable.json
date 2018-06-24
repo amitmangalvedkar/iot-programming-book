@@ -1,0 +1,122 @@
+[
+    {
+        "id": "8df6d9e5.cfdfd8",
+        "type": "inject",
+        "z": "eb437418.8cc678",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "956351a2.8eaaf8"
+            ]
+        ]
+    },
+    {
+        "id": "956351a2.8eaaf8",
+        "type": "function",
+        "z": "eb437418.8cc678",
+        "name": "Write Flow Context Variable",
+        "func": "var count = flow.get('count')||0;\ncount++;\nflow.set('count', count);\nmsg.payload = count;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "537a9ebb.61e5b"
+            ]
+        ]
+    },
+    {
+        "id": "537a9ebb.61e5b",
+        "type": "debug",
+        "z": "eb437418.8cc678",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 610,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "201633c5.10d20c",
+        "type": "inject",
+        "z": "eb437418.8cc678",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "1a917b2.0b92885"
+            ]
+        ]
+    },
+    {
+        "id": "1a917b2.0b92885",
+        "type": "function",
+        "z": "eb437418.8cc678",
+        "name": "Read Flow Context Variable",
+        "func": "var count = flow.get('count')||0;\nmsg.payload = count;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "1269a74.9958759"
+            ]
+        ]
+    },
+    {
+        "id": "1269a74.9958759",
+        "type": "debug",
+        "z": "eb437418.8cc678",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 610,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "20d3a612.41468a",
+        "type": "comment",
+        "z": "eb437418.8cc678",
+        "name": "Update flow context variable",
+        "info": "",
+        "x": 160,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "c490b89a.cf2d3",
+        "type": "comment",
+        "z": "eb437418.8cc678",
+        "name": "Read from flow context variable",
+        "info": "",
+        "x": 170,
+        "y": 180,
+        "wires": []
+    }
+]
