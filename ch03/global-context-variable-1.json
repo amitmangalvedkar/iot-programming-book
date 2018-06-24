@@ -1,0 +1,69 @@
+[
+    {
+        "id": "42bb1279.04295c",
+        "type": "tab",
+        "label": "Global Context 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8837a152.a81e3",
+        "type": "inject",
+        "z": "42bb1279.04295c",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "f233b326.a6d828"
+            ]
+        ]
+    },
+    {
+        "id": "f233b326.a6d828",
+        "type": "function",
+        "z": "42bb1279.04295c",
+        "name": "Write Global Context Variable",
+        "func": "var gCount = global.get('gCount')||0;\n++gCount;\nglobal.set('gCount', gCount);\nmsg.payload = gCount;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "26ab0a9.2956576"
+            ]
+        ]
+    },
+    {
+        "id": "26ab0a9.2956576",
+        "type": "debug",
+        "z": "42bb1279.04295c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 630,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "83f4b276.616ae8",
+        "type": "comment",
+        "z": "42bb1279.04295c",
+        "name": "Update global context variable",
+        "info": "",
+        "x": 190,
+        "y": 60,
+        "wires": []
+    }
+]

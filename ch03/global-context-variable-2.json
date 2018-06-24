@@ -1,0 +1,69 @@
+[
+    {
+        "id": "c7095b4e.02d97",
+        "type": "tab",
+        "label": "Global Context 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2ba8e8e8.8aa6d",
+        "type": "inject",
+        "z": "c7095b4e.02d97",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "8bef5d24.4b773"
+            ]
+        ]
+    },
+    {
+        "id": "8bef5d24.4b773",
+        "type": "function",
+        "z": "c7095b4e.02d97",
+        "name": "Read Global Context Variable",
+        "func": "var gCount = global.get('gCount')||0;\nmsg.payload = gCount;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "f60f6713.1e3b98"
+            ]
+        ]
+    },
+    {
+        "id": "f60f6713.1e3b98",
+        "type": "debug",
+        "z": "c7095b4e.02d97",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 610,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "fc147516.55f708",
+        "type": "comment",
+        "z": "c7095b4e.02d97",
+        "name": "Read from global context variable",
+        "info": "",
+        "x": 180,
+        "y": 60,
+        "wires": []
+    }
+]
