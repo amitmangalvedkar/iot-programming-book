@@ -119,5 +119,35 @@
         "x": 340,
         "y": 400,
         "wires": []
+    },
+    {
+        "id": "9db12aa8.cb1f6",
+        "type": "comment",
+        "z": "39679aa7.fb46b6",
+        "name": "Inject timestamp value and store in \"counter.txt\"",
+        "info": "",
+        "x": 200,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "cb1ba52c.786068",
+        "type": "comment",
+        "z": "39679aa7.fb46b6",
+        "name": "Read the contents of the file \"counter.txt\"",
+        "info": "",
+        "x": 180,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "2078f686.08288a",
+        "type": "comment",
+        "z": "39679aa7.fb46b6",
+        "name": "Tail the file \"counter.txt\"",
+        "info": "",
+        "x": 140,
+        "y": 340,
+        "wires": []
     }
 ]
