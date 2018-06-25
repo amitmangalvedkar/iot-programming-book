@@ -1,0 +1,59 @@
+[
+    {
+        "id": "38834a8.d1e08b6",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e2ef4f60.491e48",
+        "type": "inject",
+        "z": "38834a8.d1e08b6",
+        "name": "temperature in Fahrenheit",
+        "topic": "",
+        "payload": "212.0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 170,
+        "y": 200,
+        "wires": [
+            [
+                "fd36db1.17a2aa8"
+            ]
+        ]
+    },
+    {
+        "id": "dca173cf.2e01f8",
+        "type": "debug",
+        "z": "38834a8.d1e08b6",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 590,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "fd36db1.17a2aa8",
+        "type": "function",
+        "z": "38834a8.d1e08b6",
+        "name": "fahrenhietToCentigrade",
+        "func": "var fahrenheit = msg.payload;\nvar celcius = (fahrenheit - 32.0) * 5.0 / 9.0;\nmsg.payload = celcius;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "dca173cf.2e01f8"
+            ]
+        ]
+    }
+]
